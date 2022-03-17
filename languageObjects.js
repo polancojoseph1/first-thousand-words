@@ -41,12 +41,15 @@ let languageCodes = {
 function setLocalStorage() {
   for (let key in languageCodes) {
     let item = localStorage.getItem(key);
+    if (Math.floor(item) > 40) {
+      localStorage.removeItem(key);
+      item = null;
+    }
     if (!item) localStorage.setItem(key, 1);
   }
 }
 
 setLocalStorage();
-
 
 function resetLocalStorage() {
   for (let key in languageCodes) {
@@ -67,7 +70,8 @@ let languageHash = {
     "on": "sur",
     "as": "comme",
     "by": "pour",
-    "will": "vais"
+    "will": "vais",
+    "just": "juste"
   },
   "es": {
     "I": "yo",

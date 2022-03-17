@@ -25,8 +25,8 @@ class CurrentNode {
     if (this.current < 0) this.index = 24;
   }
   updateScore() {
-    let score = document.querySelector(".score-text")
-    score.innerText = (this.index + 1) + "/25"
+    let score = document.querySelector(".score-text");
+    score.innerText = (this.index + 1) + "/40";
   }
 }
 
@@ -189,6 +189,11 @@ class SinglyLinkedList {
       count++;
     }
     return node;
+  }
+  makeCyclic() {
+    if (this.head && this.length > 1) {
+      this.tail.next = this.head;
+    }
   }
 }
 

@@ -106,17 +106,6 @@ function flashCards(languageTo = "es") {
 
     prevButton.addEventListener("click", prev);
 
-    // setInterval(() => {
-    //   let bar = document.querySelector(".inner-score-bar");
-    //   if (currentCount >= 90 && currentCount <= 100) {
-    //     bar.style.background = "green";
-    //   } else if (currentCount >= 0 && currentCount <= 15) {
-    //     bar.style.background = "red";
-    //   } else {
-    //     bar.style.background = "rgb(245, 211, 20)";
-    //   }
-    // }, 250)
-
   }
 
   let sll;
@@ -139,7 +128,9 @@ function flashCards(languageTo = "es") {
 
   populate();
 
-  let currentSLL = new CurrentNode(sll.goToNthDeck(localStorage.getItem(languageTo)))
+  let currentSLL = new CurrentNode(sll.goToNthDeck(localStorage.getItem(languageTo)));
+
+  sll.makeCyclic();
 
   page(currentSLL.current, languageTo);
 
@@ -196,7 +187,7 @@ setInterval(() => {
     }, 500)
     currentSLL.next();
     let currentCount = Math.floor(localStorage.getItem(languageTo));
-    localStorage.setItem(languageTo, currentCount + 1);
+    localStorage.setItem(languageTo, currentCount + 1 > 40 ? 0 : currentCount + 1);
     currentSLL.updateScore();
     removeEventListeners();
     visited.clear();
