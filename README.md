@@ -19,6 +19,8 @@ Once you complete all 40 decks, you will be taken to deck one.
 
 ## Technical Details
 
+### Technology Used
+
 This application was made with Javascript, HTML and CSS
 
 ### Data Structures
