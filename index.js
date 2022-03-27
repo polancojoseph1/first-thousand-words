@@ -1,5 +1,23 @@
 function flashCards(languageTo = "es") {
 
+
+  // document.addEventListener("keyup", (e) => {
+  //   console.log(e.code) // equals arrow up
+  //   // console.log
+  // })
+
+  window.addEventListener("keydown", function(e) {
+    if (["ArrowUp"].indexOf(e.code) > -1) { // Up arrow
+      this.setTimeout(() => {
+        console.log(e)
+        e.preventDefault();
+      }, 0)
+      setTimeout(() => {
+        e.defaultPrevented = true;
+      },3000)
+    }
+}, false);
+
   let next;
 
   let prev;

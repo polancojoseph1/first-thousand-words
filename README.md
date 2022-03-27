@@ -1,6 +1,6 @@
 # First Thousand Words
 
-First Thoudand Words is a website that gives you flash cards to study and to be able to write 1000 words in 17 languages
+First Thousand Words is a website that gives you flash cards to study and to be able to write 1000 words in 17 languages
 Foobar is a Python library for dealing with word pluralization.
 
 ## About First Thousand Words
